@@ -1,23 +1,28 @@
 /*
-Logic Challenge - Mencari Mean
+Logic Challenge - Pasangan Angka Terbesar
 Problem
-Diberikan sebuah function cariMean(arr) yang menerima sebuah array angka. Function akan me-return mean dari array atau deret angka tersebut. Mean adalah angka rata-rata dari deret bilangan tersebut. Contoh, mean atau rata-rata dari [1, 2, 3, 4, 5] adalah 3. Kita perlu kemudian melakukan pembulatan angka dari hasil mean yang didapatkan.
+Diberikan sebuah function pasanganTerbesar(angka) yang menerima 1 parameter berupa angka. Functiona akan menentukan pasangan dua digit angka mana yang paling besar dan me-return angka tersebut. Contoh, jika angka adalah 183928, maka function akan me-return 92, pasangan dua digit angka yang paling besar diantara yang lainnya.
 
 Code
 */
-function cariMean(arr) {
+function pasanganTerbesar(num) {
   // you can only write your code here!
-  let sumNum = 0;
-  for (let i = 0; i < arr.length; i++) {
-    sumNum += arr[i];
+  const strNum = String(num);
+  const firstCouple = strNum[0] + strNum[1];
+  let fixCoupleNum = Number(firstCouple);
+  for (let i = 1; i < strNum.length-1; i++) {
+    let coupleNum = strNum[i] + strNum[i+1];
+    let numCouple = Number(coupleNum);
+    if (fixCoupleNum < numCouple) {
+      fixCoupleNum = numCouple;
+    }
   }
-  const mean = Math.round(sumNum / arr.length);
-  return mean;
+  return fixCoupleNum;
 }
 
 // TEST CASES
-console.log(cariMean([1, 2, 3, 4, 5])); // 3
-console.log(cariMean([3, 5, 7, 5, 3])); // 5
-console.log(cariMean([6, 5, 4, 7, 3])); // 5
-console.log(cariMean([1, 3, 3])); // 2
-console.log(cariMean([7, 7, 7, 7, 7])); // 7
+console.log(pasanganTerbesar(641573)); // 73
+console.log(pasanganTerbesar(12783456)); // 83
+console.log(pasanganTerbesar(910233)); // 91
+console.log(pasanganTerbesar(71856421)); // 85
+console.log(pasanganTerbesar(79918293)); // 99
