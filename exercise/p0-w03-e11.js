@@ -1,15 +1,15 @@
 /*
-Logic Challenge - Tentukan Deret Geometri
+Logic Challenge - Tentukan Deret Aritmatika
 Problem
-Diberikan sebuah function tentukanDeretGeometri(arr) yang menerima satu parameter berupa array yang terdiri dari angka. Function tersebut akan mengembalikan true jika array dari parameter tersebut merupakan deret geometri. Deret geometri adalah sebuah deret dimana perbedaan setiap angka di deret tersebut konsisten secara perkalian. Contoh, [1, 3, 9, 27, 81] adalah deret aritmatika dengan pertambahan nilai sebesar pengalian 3, dan [1, 3, 9, 27, 48] bukanlah deret aritmatika karena tidak perbedaan selisih antar angka yang tidak konsisten secara perkalian (27 * 3 bukanlah 48!).
+Diberikan sebuah function tentukanDeretAritmatika(arr) yang menerima satu parameter berupa array yang terdiri dari angka. Function tersebut akan mengembalikan true jika array dari parameter tersebut merupakan deret aritmatika. Deret aritmatika adalah sebuah deret dimana perbedaan setiap angka di deret tersebut konsisten. Contoh, [2, 4, 6, 8] adalah deret aritmatika dengan pertambahan nilai sebesar 2, dan [2, 4, 6, 9] bukanlah deret aritmatika karena tidak perbedaan selisih antar angka yang tidak konsisten.
 
 Code
 */
-function tentukanDeretGeometri(arr) {
+function tentukanDeretAritmatika(arr) {
   // you can only write your code here!
-  const interval = arr[arr.length-1] / arr[arr.length-2];
+  const interval = arr[arr.length-1] - arr[arr.length-2];
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i+1] / arr[i] === interval) {
+    if (arr[i+1] - arr[i] === interval) {
         return true;
     } else {
         return false;
@@ -18,8 +18,8 @@ function tentukanDeretGeometri(arr) {
 }
 
 // TEST CASES
-console.log(tentukanDeretGeometri([1, 3, 9, 27, 81])); // true
-console.log(tentukanDeretGeometri([2, 4, 8, 16, 32])); // true
-console.log(tentukanDeretGeometri([2, 4, 6, 8])); // false
-console.log(tentukanDeretGeometri([2, 6, 18, 54])); // true
-console.log(tentukanDeretGeometri([1, 2, 3, 4, 7, 9])); // false
+console.log(tentukanDeretAritmatika([1, 2, 3, 4, 5, 6])); // true
+console.log(tentukanDeretAritmatika([2, 4, 6, 12, 24])); // false
+console.log(tentukanDeretAritmatika([2, 4, 6, 8])); // true
+console.log(tentukanDeretAritmatika([2, 6, 18, 54])); // false
+console.log(tentukanDeretAritmatika([1, 2, 3, 4, 7, 9])); // false
