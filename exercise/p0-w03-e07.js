@@ -1,28 +1,39 @@
 /*
-Logic Challenge - Pasangan Angka Terbesar
+Logic Challenge - Menghitung Jumlah Kata
 Problem
-Diberikan sebuah function pasanganTerbesar(angka) yang menerima 1 parameter berupa angka. Functiona akan menentukan pasangan dua digit angka mana yang paling besar dan me-return angka tersebut. Contoh, jika angka adalah 183928, maka function akan me-return 92, pasangan dua digit angka yang paling besar diantara yang lainnya.
+Diberikan sebuah function hitungJumlahKata(kalimat) yang menerima parameter berupa string yang merupakan sebuah kalimat. Function akan mengembalikan jumlah kata dari kalimat tersebut. Contoh, "I have a dream" akan menghasilkan nilai 4, karena memiliki 4 kata.
 
 Code
 */
-function pasanganTerbesar(num) {
+function hitungJumlahKata(kalimat) {
   // you can only write your code here!
-  const strNum = String(num);
-  const firstCouple = strNum[0] + strNum[1];
-  let fixCoupleNum = Number(firstCouple);
-  for (let i = 1; i < strNum.length-1; i++) {
-    let coupleNum = strNum[i] + strNum[i+1];
-    let numCouple = Number(coupleNum);
-    if (fixCoupleNum < numCouple) {
-      fixCoupleNum = numCouple;
+  let mySplit = [];
+  let temp = '';
+  for (let i = 0; i < kalimat.length; i++) {
+    if (kalimat[i] !== ' ') {
+        temp += kalimat[i];
+    }
+    if (kalimat[i+1] === ' ') {
+        mySplit.push(temp);
+        temp = '';
     }
   }
-  return fixCoupleNum;
+  let lastWord = '';
+  for (let i = 0; i < kalimat.length; i++) {
+    if (kalimat[i] === ' ') {
+        lastWord = '';
+    }
+    if (kalimat[i] !== ' ') {
+        lastWord += kalimat[i];
+    }
+  }
+  mySplit.push(lastWord);
+  return mySplit.length;
 }
 
 // TEST CASES
-console.log(pasanganTerbesar(641573)); // 73
-console.log(pasanganTerbesar(12783456)); // 83
-console.log(pasanganTerbesar(910233)); // 91
-console.log(pasanganTerbesar(71856421)); // 85
-console.log(pasanganTerbesar(79918293)); // 99
+console.log(hitungJumlahKata('I have a dream')); // 4
+console.log(hitungJumlahKata('Never eat shredded wheat or cake')); // 6
+console.log(hitungJumlahKata('A song to sing')); // 4
+console.log(hitungJumlahKata('I')); // 1
+console.log(hitungJumlahKata('I believe I can code')); // 5
