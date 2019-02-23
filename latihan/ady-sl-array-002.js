@@ -24,18 +24,21 @@
 
 function stringToMultidimensi(str) {
     // your code here
-    if (Math.pow(str.length, 0.5) % 2 !== 0) {
-        console.log('char count invalid');
-    } else {
-        let result = [];
-        for (let i = 0; i < Math.pow(str.length, 0.5); i++) {
-            let temp = [];
-            for (let j = 0; j < Math.pow(str.length, 0.5); j++) {
-                temp.push(str[j]);
+    const multiple = Math.pow(str.length, 0.5)
+    if (multiple % 2 === 0 || multiple % 2 === 1) {
+        let result = []
+        let index = 0
+        for (let j = 0; j < multiple; j++) {
+            let temp = []
+            for (let i = 0; i < multiple; i++) {
+                temp.push(Number(str[index]))
+                index++
             }
-            result.push(temp);
+            result.push(temp)
         }
-        console.log(result);
+        console.log(result)
+    } else {
+        console.log('char count invalid')
     }
 }
 
