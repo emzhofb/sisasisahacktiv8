@@ -34,20 +34,20 @@ function pairProject( students ) {
         return 'Jumlah murid harus genap';
     } else {
         let result = [];
-        for (let i = 0; i < students.length; i++) {
+        for (let i = 0; i < students.length-1; i++) {
             let temp = '';
-            for (let j = i+1; j < students.length; j++) {
-                if (students[i][0] !== students[j][0]) {
-                    temp = students[i] + ' and ' + students[j];
-                    result.push(temp);
-                }
+            let j = i+1
+            if (students[i][0] !== students[j][0]) {
+                temp = students[i] + ' and ' + students[j]
+                result.push(temp)
+                i++
             }
         }
         return result;
     }
 }
 
-// console.log( pairProject(["Aries","Awtian","Momotaro","Yoki","Icha","Wika","Wawan","Mimin","Ryan","Yogi"]) )
+console.log( pairProject(["Aries","Awtian","Momotaro","Yoki","Icha","Wika","Wawan","Mimin","Ryan","Yogi"]) )
 /* 
 [ 'Aries and Momotaro',
   'Awtian and Yoki',

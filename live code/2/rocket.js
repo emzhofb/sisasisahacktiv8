@@ -43,17 +43,6 @@ OUTPUT:
 
 function printBranch(branches) {
   // your code is here
-  let result = '';
-  for (let i = 0; i < branches.length; i++) {
-    for (let j = 0; j < branches[i].length; j++) {
-      for (let k = 0; k < branches[i][j].length; k++) {
-        if (branches[i][j][0] === branches[i][j][k]) {
-          result += 'jan: ' + branches[i][j][k];
-        }
-      }
-    }
-  }
-  return result;
 }
   
   //TEST CASE 1
