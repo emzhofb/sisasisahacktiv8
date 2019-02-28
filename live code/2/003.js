@@ -33,14 +33,13 @@ function pairProject( students ) {
     if (students.length % 2 === 1) {
         return 'Jumlah murid harus genap';
     } else {
-        let result = [];
+        let result = []
         for (let i = 0; i < students.length-1; i++) {
-            let temp = '';
+            let temp = ''
             let j = i+1
             if (students[i][0] !== students[j][0]) {
                 temp = students[i] + ' and ' + students[j]
                 result.push(temp)
-                i++
             }
         }
         return result;
