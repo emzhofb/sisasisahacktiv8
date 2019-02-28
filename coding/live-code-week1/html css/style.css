@@ -1,0 +1,41 @@
+h2 {
+    text-align: center;
+    background-color: #cc6600;
+    color: white;
+    padding: 10px;
+    box-shadow: 5px 5px grey;
+}
+.box-100 {
+    width: 150px;
+    height: 100px;
+    float: left;
+    margin: 38px;
+    padding: 20px;
+    font-size: 15pt;
+    text-align: center;
+    background-color: #339966;
+    color: white;
+    border-radius: 25px;
+}
+.box-big {
+    border-style: solid;
+    border: 1px solid;
+    width: 100%;
+    background-color: white;
+    color: #0099ff;
+    height: 200px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+h1 {
+    text-align: center;
+    color: #ff6600;
+    font-size: 100px;
+}
+.lorem {
+    text-align: justify;
+    font-size: 25pt;
+}
+img {
+    margin-top: 20px;
+}
