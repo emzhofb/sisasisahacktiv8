@@ -27,6 +27,7 @@ function soal1(param) {
 
   let result = [];
   let temp = "!";
+
   for (let i = 0; i < param; i++) {
     result.push(temp);
     if (temp === "!") temp = "@";
