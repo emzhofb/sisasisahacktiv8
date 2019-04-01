@@ -4,6 +4,7 @@ function soal2(param) {
   //your code here
   let result = [];
   let temp = [];
+
   for (let i = 0; i < param.length; i++) {
     let limit = param.length - i;
     for (let j = i; j < limit; j++) {
@@ -13,6 +14,7 @@ function soal2(param) {
     }
     result.push(temp);
   }
+
   console.log(result);
 }
 
