@@ -30,17 +30,17 @@ function generateBar(p, t) {
 
 generateBar(4, 3); //
 /*
-        oooo
-        o  o
-        oooo
-    */
+  oooo
+  o  o
+  oooo
+*/
 
 generateBar(10, 4); //
 /*
-        oooooooooo
-        o        o
-        o        o
-        oooooooooo
-    */
+  oooooooooo
+  o        o
+  o        o
+  oooooooooo
+*/
 
 generateBar(4, 5); // panjang harus lebih besar daripada tinggi
