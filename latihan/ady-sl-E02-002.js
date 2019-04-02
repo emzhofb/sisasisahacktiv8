@@ -7,22 +7,29 @@ function soal2(param) {
 
   for (let i = 0; i < param.length; i++) {
     let limit = param.length - i;
+    let flag = false;
     for (let j = i; j < limit; j++) {
       temp = [];
       temp.push(param[j]);
       temp.push(param[param.length - (j + 1)]);
+      flag = true;
+      for (let k = 0; k < temp.length; k++) {
+        if (temp[k] === temp[k + 1]) {
+          temp[k + 1] = "Instruktur";
+        }
+      }
     }
-    result.push(temp);
+    if (flag) result.push(temp);
   }
 
-  console.log(result);
+  return result;
 }
 
 console.log(soal2(["Aries", "Dimas", "Gatot", "Nurmantyo", "Zainul", "Majdi"]));
 /*
-    output: 
-    [['Aries','Majdi'],['Dimas','Zainul'],['Gatot','Nurmantyo']]
-*/
+      output: 
+      [['Aries','Majdi'],['Dimas','Zainul'],['Gatot','Nurmantyo']]
+  */
 console.log(soal2(["A", "B", "C", "D", "E"])); //
 // [ ['A','E'] , ['B','D'], ['C','Instruktur']]
 console.log(
