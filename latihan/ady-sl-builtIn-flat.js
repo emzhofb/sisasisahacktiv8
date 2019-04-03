@@ -2,16 +2,21 @@ function myFlat(array, dimension) {
   let result = [];
 
   for (let i = 0; i < array.length; i++) {
-    if (array[i].length === undefined) result.push(array[i]);
-    else {
+    if (array[i].length === undefined) {
+      result.push(array[i]);
+    } else {
       for (let j = 0; j < array[i].length; j++) {
-        if (array[i][j].length === undefined) result.push(array[i][j]);
-        else if (dimension > 1) {
+        if (array[i][j].length === undefined) {
+          result.push(array[i][j]);
+        } else if (dimension > 1) {
           for (let k = 0; k < array[i][j].length; k++) {
-            if (array[i][j][k].length === undefined)
+            if (array[i][j][k].length === undefined) {
               result.push(array[i][j][k]);
+            }
           }
-        } else result.push(array[i][j]);
+        } else {
+          result.push(array[i][j]);
+        }
       }
     }
   }
