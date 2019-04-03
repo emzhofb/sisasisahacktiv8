@@ -34,14 +34,17 @@
 
 function generateBarXO(p, t) {
   // your code here
+  let count = 0;
   for (let i = 0; i < t; i++) {
-    let result = "";
-    let temp = "";
+    let row = "";
+    let col = "";
     for (let j = 0; j < p; j++) {
-      temp += "x";
+      if (count % 3 === 0) col += "x";
+      else col += "o";
+      count++;
     }
-    result += temp;
-    console.log(result);
+    row += col;
+    console.log(row);
   }
 }
 
@@ -53,7 +56,7 @@ generateBarXO(4, 4);
   xoox
 */
 
-// generateBarXO(6, 4);
+generateBarXO(6, 4);
 /*
   xooxoo
   xooxoo
