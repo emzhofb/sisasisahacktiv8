@@ -16,7 +16,6 @@ console.log("             ");
 function myPop(array) {
   let deletedIndex = array.length - 1;
   let result = [];
-
   let deletedValue;
 
   for (let i = 0; i < array.length; i++) {
