@@ -27,6 +27,9 @@ function outputReverse(array) {
 }
 
 var array2 = ["one", "two", "three"];
+console.log("array1:");
 console.log(array2);
+console.log("reversed:");
 console.log(myReverse(array2));
+console.log("array1:");
 console.log(outputReverse(array2));
