@@ -12,8 +12,6 @@ function addAll(array) {
   let first = array[0];
   let increment = array[1] - array[0];
   let all = array.length;
-  let result = first * all + (first + increment);
-  return result;
 }
 
 console.log(addAll([1, 2, 3, 4, 5]));
