@@ -20,13 +20,37 @@
 
 */
 
-function rangePrimeNumber(start,finish) {
-    // your code is here
+function rangePrimeNumber(start, finish) {
+  // your code is here
+  let primeNumber = [];
+
+  for (let i = 2; i < 100; i++) {
+    let flag = false;
+    let number = i;
+    for (let j = 2; j < 100; j++) {
+      if (i !== j) {
+        if (i % j === 0) {
+          flag = true;
+        }
+      }
+    }
+    if (flag === false) {
+      primeNumber.push(number);
+    }
+  }
+
+  let result = [];
+
+  for (let i = start - 1; i < finish; i++) {
+    result.push(primeNumber[i]);
+  }
+
+  return result;
 }
 
-console.log(rangePrimeNumber(5,10))
-// output 
+console.log(rangePrimeNumber(5, 10));
+// output
 // [11,13,17,19,23,29]
 
-// console.log(rangePrimeNumber(4,9));
+console.log(rangePrimeNumber(4, 9));
 // output [7,11,13,17,19,23]
