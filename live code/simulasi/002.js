@@ -24,12 +24,36 @@ Jika kata adalah 'max', maka return hasil terbesar dari dua array yang ada
 */
 
 function statistik(kata, arr1, arr2) {
-	// tulis kode HANYA disini
-	
+  // tulis kode HANYA disini
+  const array1 = sorting(arr1);
+  const array2 = sorting(arr2);
+
+  if (kata === "max") {
+    return array1[array1.length - 1] + " " + array2[array2.length - 1];
+  } else if (kata === "min") {
+    return array1[0] + " " + array2[0];
+  }
 }
 
-console.log(statistik('min', [1, 1, 1] , [8, 15, 17, 9]));             // 1 8
-console.log(statistik('max', [4, 8, 9, 12] , [33, 88, 99 ,11]));       // 12 99
-console.log(statistik('min', [1, 2, 5, 2, 2] , [67, 45, 55]));         // 1 45
-console.log(statistik('max', [6, 2, 4, 10, 8, 2] , [6, 5, 13, 23]));     // 10 23
-console.log(statistik('min', [5, 11, 18, 6], [3, 1, 8, 13]));          // 5 1
+function sorting(array) {
+  for (let i = 0; i < array.length; i++) {
+    var minimum = array[i];
+    var index = i;
+    for (let j = i + 1; j < array.length; j++) {
+      if (minimum > array[j]) {
+        minimum = array[j];
+        index = j;
+      }
+    }
+    var temp = array[i];
+    array[i] = minimum;
+    array[index] = temp;
+  }
+  return array;
+}
+
+console.log(statistik("min", [1, 1, 1], [8, 15, 17, 9])); // 1 8
+console.log(statistik("max", [4, 8, 9, 12], [33, 88, 99, 11])); // 12 99
+console.log(statistik("min", [1, 2, 5, 2, 2], [67, 45, 55])); // 1 45
+console.log(statistik("max", [6, 2, 4, 10, 8, 2], [6, 5, 13, 23])); // 10 23
+console.log(statistik("min", [5, 11, 18, 6], [3, 1, 8, 13])); // 5 1
