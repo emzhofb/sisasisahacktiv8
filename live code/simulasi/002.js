@@ -37,15 +37,15 @@ function statistik(kata, arr1, arr2) {
 
 function sorting(array) {
   for (let i = 0; i < array.length; i++) {
-    var minimum = array[i];
-    var index = i;
+    let minimum = array[i];
+    let index = i;
     for (let j = i + 1; j < array.length; j++) {
       if (minimum > array[j]) {
         minimum = array[j];
         index = j;
       }
     }
-    var temp = array[i];
+    let temp = array[i];
     array[i] = minimum;
     array[index] = temp;
   }
