@@ -21,8 +21,30 @@ WAJIB menggunakan Pseudocode
 
 // SKELETON CODE (Code Sample)
 
-var name // silakan berikan nilai bebas
-var age // silakan berikan nilai bebas
-var money // silakan berikan nilai bebas
+var name = "ikhda"; // silakan berikan nilai bebas
+var age = 20; // silakan berikan nilai bebas
+var money = 400000; // silakan berikan nilai bebas
 
 // Buat code disini
+
+if (name === undefined || name === "") {
+  console.log("Anda tidak boleh masuk!");
+} else {
+  if (age < 17) {
+    console.log("Anda hanya boleh memesan juice");
+    if (money >= 50000) {
+      money -= 50000;
+    } else {
+      console.log("Uang tidak cukup. Anda harus pulang.");
+    }
+  } else if (age >= 17) {
+    console.log("Anda hanya boleh memesan angur");
+    if (money >= 300000) {
+      money -= 300000;
+    } else {
+      console.log("Uang tidak cukup. Anda harus pulang.");
+    }
+  }
+
+  console.log("Anda bisa pesan minum. Sisa uang anda: " + money);
+}
