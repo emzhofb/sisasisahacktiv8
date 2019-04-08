@@ -60,73 +60,74 @@
 
 */
 var products = [
-    {
-      id: 1,
-      title: "Motherboard Asus GTX 1000",
-      price: 1000000
-    },
-    {
-      id: 2,
-      title: "Harddisk Seagate 1TB",
-      price: 1500000
-    },
-    {
-      id: 3,
-      title: "RAM V-Gen 16GB",
-      price: 1600000
-    },
-    {
-      id: 4,
-      title: "Monitor Samsung 15 inch",
-      price: 1300000
+  {
+    id: 1,
+    title: "Motherboard Asus GTX 1000",
+    price: 1000000
+  },
+  {
+    id: 2,
+    title: "Harddisk Seagate 1TB",
+    price: 1500000
+  },
+  {
+    id: 3,
+    title: "RAM V-Gen 16GB",
+    price: 1600000
+  },
+  {
+    id: 4,
+    title: "Monitor Samsung 15 inch",
+    price: 1300000
+  }
+];
+
+function cart(shops) {
+  // your code here
+  let result = {};
+  result.title = "Nota Pembayaran";
+  result.carts = [];
+
+  if (shops.length === 0) return "Anda harus memilih produk";
+  else {
+    let notResult = [];
+
+    for (let i = 0; i < shops.length; i++) {
+      // console.log(shops[i]);
+      // console.log(products[0].id);
+      let temp = {};
+      temp.id = 0;
+      temp.title = "";
+      temp.qty = 0;
+      temp.subtotal = 0;
+      for (let j = 0; j < products.length; j++) {
+        if (shops[i] === products[j].id) {
+          // console.log(products[j]);
+          temp.id = products[j].id;
+          temp.title = products[j].title;
+          temp.subtotal += products[j].price;
+          temp.qty++;
+        }
+      }
+      notResult.push(temp);
     }
-  ];
-  
-  function cart(shops) {
-    // your code here
-    let result = {};
-    result.title = "Nota Pembayaran";
-    result.carts = [];
-  
-    if (shops.length === 0) return "Anda harus memilih produk";
-    else {
-      let notResult = [];
-  
-      for (let i = 0; i < shops.length; i++) {
-        // console.log(shops[i]);
-        // console.log(products[0].id);
-        let temp = {};
-        temp.id = 0;
-        temp.title = "";
-        temp.qty = 0;
-        temp.subtotal = 0;
-        for (let j = 0; j < products.length; j++) {
-          if (shops[i] === products[j].id) {
-            // console.log(products[j]);
-            temp.id = products[j].id;
-            temp.title = products[j].title;
-            temp.subtotal += products[j].price;
-            temp.qty++;
-          }
+
+    // console.log(notResult);
+    for (let i = 0; i < notResult.length; i++) {
+      // console.log(notResult[i].id);
+      for (let j = i + 1; j < notResult.length; j++) {
+        if (notResult[i].id === notResult[j].id) {
+          notResult[i].qty++;
         }
-        notResult.push(temp);
       }
-  
-      // console.log(notResult);
-      for (let i = 0; i < notResult.length; i++) {
-        // console.log(notResult[i].id);
-        for (let j = i + 1; j < notResult.length; j++) {
-          if (notResult[i].id === notResult[j].id) {
-            notResult[i].qty++;
-          }
-        }
-        notResult[i].subtotal *= notResult[i].qty;
-      }
+      notResult[i].subtotal *= notResult[i].qty;
+    }
     return result;
   }
-  
-  console.log(cart([1, 1, 2, 3, 3, 3]));
-  /* 
+}
+
+console.log(cart([1, 1, 2, 3, 3, 3]));
+/* 
     {
       title:"Nota Pembayaran"
       carts:[
@@ -152,9 +153,9 @@ var products = [
       total:8300000
     }
   */
-  // console.log("\n");
-  // console.log(cart([1, 3, 2, 1, 4, 3]));
-  /* 
+// console.log("\n");
+// console.log(cart([1, 3, 2, 1, 4, 3]));
+/* 
     { title: 'Nota Pembayaran',
     cart:
     [{ id: 1,
@@ -174,8 +175,7 @@ var products = [
     }],
     total: 8000000 }
   */
-  
-  // console.log("\n");
-  // console.log(cart([]));
-  // anda harus memilih product
-  
+
+// console.log("\n");
+// console.log(cart([]));
+// anda harus memilih product
