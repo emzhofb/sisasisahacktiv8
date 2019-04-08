@@ -18,6 +18,27 @@ Diberikan variable name, age, dan money.
 Dipersilahkan mengganti nilai dari 3 variable tersebut, sesuai data type yang cocok, namun dilarang mengganti nama variable.
 WAJIB menggunakan Pseudocode
 */
+/*
+Pseudocode
+
+IF "name" is undefined or "name" is empty
+  DISPLAY "Anda tidak boleh masuk!"
+ELSE
+  IF "age" lower than 17
+    DISPLAY "Anda hanya boleh memesan juice"
+    IF "money" equal or greater than 50000
+      "money" substracted by 50000
+    ELSE
+      DISPLAY "Uang tidak cukup. Anda harus pulang."
+  IF "age" equal or greater than 17
+    DISPLAY "Anda hanya boleh memesan anggur"
+    IF "money" equal or greater than 300000
+      "money" substracted by 300000
+    ELSE
+      DISPLAY "Uang tidak cukup. Anda harus pulang."
+
+DISPLAY "Anda bisa pesan minum, sisa uang anda: " plus "money"
+*/
 
 // SKELETON CODE (Code Sample)
 
