@@ -28,25 +28,27 @@
     
 */
 
-function pairProject( students ) {
-    // your code here
-    if (students.length % 2 === 1) {
-        return 'Jumlah murid harus genap';
-    } else {
-        let result = []
-        for (let i = 0; i < students.length-1; i++) {
-            let temp = ''
-            let j = i+1
-            if (students[i][0] !== students[j][0]) {
-                temp = students[i] + ' and ' + students[j]
-                result.push(temp)
-            }
-        }
-        return result;
-    }
+function pairProject(students) {
+  // your code here
+  if (students.length % 2 === 1) {
+    return "Jumlah murid harus genap";
+  }
 }
 
-console.log( pairProject(["Aries","Awtian","Momotaro","Yoki","Icha","Wika","Wawan","Mimin","Ryan","Yogi"]) )
+console.log(
+  pairProject([
+    "Aries",
+    "Awtian",
+    "Momotaro",
+    "Yoki",
+    "Icha",
+    "Wika",
+    "Wawan",
+    "Mimin",
+    "Ryan",
+    "Yogi"
+  ])
+);
 /* 
 [ 'Aries and Momotaro',
   'Awtian and Yoki',
@@ -55,7 +57,9 @@ console.log( pairProject(["Aries","Awtian","Momotaro","Yoki","Icha","Wika","Wawa
   'Ryan and Yogi' ]
 */
 
-console.log( pairProject(["asep","baqi","jajang","junaedi","iqbal","toni"]) )
+console.log(
+  pairProject(["asep", "baqi", "jajang", "junaedi", "iqbal", "toni"])
+);
 /* 
     ["asep and baqi","jajang and iqbal","junaedi and toni"]
 */
